@@ -1,4 +1,10 @@
 ## This will be use by megalinter.yaml in the workflow
 ---
-ENABLE: ["PYTHON", "YAML", "MARKDOWN"]
-DISABLE_LINTERS: ["MARKDOWN_MARKDOWN_LINK_CHECK"]
+ENABLE_LINTERS:
+  [
+    "YAML_PRETTIER",
+    "YAML_YAMLLINT",
+    "PYTHON_RUFF",
+    "PYTHON_ISORT",
+    "PYTHON_BLACK",
+  ]
