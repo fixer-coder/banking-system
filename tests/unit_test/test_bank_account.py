@@ -11,6 +11,7 @@ ACCEPTED_CURRENCY = ['usdollars', 'euros', 'caddollars']
 def ace_bank():
     return AceBank()
 
+
 @pytest.fixture
 def mock_bank():
     account_details = {
