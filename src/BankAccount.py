@@ -127,9 +127,9 @@ class AceBank(object):
 
     @staticmethod
     def currency_converter(amount, currency):
-        if currency.lower() == "USD":
+        if currency == "USD":
             amount = float(amount * 1.50)
 
-        if currency.lower() == "EUROS":
+        if currency == "EUROS":
             amount = float(amount * 2.00)
         return amount
