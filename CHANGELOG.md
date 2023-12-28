@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/fixer-coder/banking-system/compare/v0.1.0...v0.1.1) (2023-12-28)
+
+
+### Bug Fixes
+
+* adding functional test and removing 3.7 python from unit test ([ade0c24](https://github.com/fixer-coder/banking-system/commit/ade0c241833291521762447cf2a78967d1adc76b))
+
 ## 0.1.0 (2023-12-28)
 
 
