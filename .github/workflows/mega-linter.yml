@@ -34,7 +34,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
         if: success() || failure()
