@@ -1,24 +1,22 @@
----
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Run unit test
+name: Run functional test
 
 on: [push]
+
+permissions: read-all
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.8
 
       - name: Install dependencies
         run: |
@@ -33,7 +31,7 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Unit Test with pytest
+      - name: Functional Test with pytest
         run: |
           export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-          pytest $(pwd)/tests/unit_test -s -vvv
+          pytest $(pwd)/tests/functional_tests -s -vvv
